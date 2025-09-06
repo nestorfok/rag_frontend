@@ -2,6 +2,7 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
+import { LandingPage } from './pages/landingPage'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -28,8 +29,8 @@ function App() {
       <p className="read-the-docs">
         Click on the Vite and React logos to learn more
       </p> */}
-      <div className="bg-primary-400">Hello World</div>
-      <h1 className="text-3xl font-bold underline">Hello World</h1>
+      <LandingPage />
+      {/* <h1 className="text-3xl font-bold underline">Hello World</h1> */}
     </>
   )
 }

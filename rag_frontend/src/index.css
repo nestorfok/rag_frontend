@@ -1,23 +1,224 @@
 @import "tailwindcss";
 
-@theme {
-  --color-primary-50: #eff6ff;
-  --color-primary-100: #dbeafe;
-  --color-primary-200: #bfdbfe;
-  --color-primary-300: #93c5fd;
-  --color-primary-400: #60a5fa;
-  --color-primary-500: #3b82f6;
-  --color-primary-600: #2563eb;
-  --color-primary-700: #1d4ed8;
-  --color-primary-800: #1e40af;
-  --color-primary-900: #1e3a8a;
-  --color-primary-950: #172554;
+/* Reset and ensure full viewport usage */
 
+
+@theme {
+  /* Primary Colors - Eye-catching Purple (inspired by SmartQuest) */
+  --color-primary-50: #faf5ff;
+  --color-primary-100: #f3e8ff;
+  --color-primary-200: #e9d5ff;
+  --color-primary-300: #d8b4fe;
+  --color-primary-400: #c084fc;
+  --color-primary-500: #a855f7;
+  --color-primary-600: #9333ea;
+  --color-primary-700: #7c3aed;
+  --color-primary-800: #6b21a8;
+  --color-primary-900: #581c87;
+  --color-primary-950: #3b0764;
+
+  /* Secondary Colors - Soft Teal (inspired by Slack) */
+  --color-secondary-50: #f0fdfa;
+  --color-secondary-100: #ccfbf1;
+  --color-secondary-200: #99f6e4;
+  --color-secondary-300: #5eead4;
+  --color-secondary-400: #2dd4bf;
+  --color-secondary-500: #14b8a6;
+  --color-secondary-600: #0d9488;
+  --color-secondary-700: #0f766e;
+  --color-secondary-800: #115e59;
+  --color-secondary-900: #134e4a;
+  --color-secondary-950: #042f2e;
+
+  /* Neutral Colors - Warm Cream (inspired by Notion) */
+  --color-neutral-50: #fefefe;
+  --color-neutral-100: #fdfdfd;
+  --color-neutral-200: #f7f7f5;
+  --color-neutral-300: #f1f1ef;
+  --color-neutral-400: #c9c7c5;
+  --color-neutral-500: #9b9a97;
+  --color-neutral-600: #787774;
+  --color-neutral-700: #5e5c58;
+  --color-neutral-800: #373530;
+  --color-neutral-900: #2f2e2a;
+  --color-neutral-950: #1f1e1b;
+
+  /* Success Colors - Soft Mint (inspired by GitHub) */
+  --color-success-50: #f0fff4;
+  --color-success-100: #dcffe4;
+  --color-success-200: #bbf7d0;
+  --color-success-300: #86efac;
+  --color-success-400: #4ade80;
+  --color-success-500: #22c55e;
+  --color-success-600: #16a34a;
+  --color-success-700: #15803d;
+  --color-success-800: #166534;
+  --color-success-900: #14532d;
+  --color-success-950: #052e16;
+
+  /* Warning Colors - Soft Peach (inspired by Discord) */
+  --color-warning-50: #fffbf0;
+  --color-warning-100: #fef3e2;
+  --color-warning-200: #fce7c6;
+  --color-warning-300: #f9d71c;
+  --color-warning-400: #f5c842;
+  --color-warning-500: #f0b429;
+  --color-warning-600: #d69e2e;
+  --color-warning-700: #b7791f;
+  --color-warning-800: #975a16;
+  --color-warning-900: #744210;
+  --color-warning-950: #5f370e;
+
+  /* Error Colors - Soft Coral (inspired by Vercel) */
+  --color-error-50: #fef7f7;
+  --color-error-100: #fef1f1;
+  --color-error-200: #fde8e8;
+  --color-error-300: #fbd5d5;
+  --color-error-400: #f8b4b4;
+  --color-error-500: #f87171;
+  --color-error-600: #ef4444;
+  --color-error-700: #dc2626;
+  --color-error-800: #b91c1c;
+  --color-error-900: #991b1b;
+  --color-error-950: #7f1d1d;
+
+  /* Chat-specific Colors */
+  --color-chat-user-bg: #faf5ff;
+  --color-chat-bot-bg: #fefefe;
+  --color-chat-border: #f1f1ef;
+  --color-chat-hover: #f7f7f5;
+
+  /* Transitions */
   --transition-duration-fast: 150ms;
   --transition-duration-normal: 200ms;
   --transition-duration-slow: 300ms;
-  
   --transition-timing-function-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-timing-function-bounce: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+  /* Shadows - Softer */
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.03);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.07), 0 2px 4px -2px rgb(0 0 0 / 0.07);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.08), 0 4px 6px -4px rgb(0 0 0 / 0.08);
+  --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.08), 0 8px 10px -6px rgb(0 0 0 / 0.08);
 }
 
-/* Your custom styles go here */
+/* Animation keyframes for landing page */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Animation utility classes */
+.animate-fade-in-up {
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.animate-fade-in-left {
+  animation: fadeInLeft 0.8s ease-out forwards;
+}
+
+.animate-fade-in-right {
+  animation: fadeInRight 0.8s ease-out forwards;
+}
+
+.animate-scale-in {
+  animation: scaleIn 0.6s ease-out forwards;
+}
+
+/* Staggered animation delays */
+.animate-delay-100 {
+  animation-delay: 0.1s;
+}
+
+.animate-delay-200 {
+  animation-delay: 0.2s;
+}
+
+.animate-delay-300 {
+  animation-delay: 0.3s;
+}
+
+.animate-delay-400 {
+  animation-delay: 0.4s;
+}
+
+.animate-delay-500 {
+  animation-delay: 0.5s;
+}
+
+.animate-delay-600 {
+  animation-delay: 0.6s;
+}
+
+.animate-delay-700 {
+  animation-delay: 0.7s;
+}
+
+.animate-delay-800 {
+  animation-delay: 0.8s;
+}
+
+/* Initial hidden state for animations */
+.animate-initial-hidden {
+  opacity: 0;
+}
+
+@keyframes shake {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-4px);
+  }
+  75% {
+    transform: translateX(4px);
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
