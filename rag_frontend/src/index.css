@@ -1,6 +1,19 @@
 @import "tailwindcss";
 
 /* Reset and ensure full viewport usage */
+* {
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  height: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
 
 
 @theme {

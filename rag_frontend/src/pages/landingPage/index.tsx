@@ -1,9 +1,11 @@
-import React, { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Form, Button, Typography, message } from 'antd';
 import { UserOutlined, RobotOutlined, ClockCircleOutlined, BulbOutlined } from '@ant-design/icons';
+import { useNavigate } from 'react-router-dom';
 import { FeatureCard } from '../../components/landingPage/FeatureCard';
 import { LoginForm } from '../../components/landingPage/LoginForm';
 import { FooterButton } from '../../components/landingPage/FooterButton';
+import { useAuth } from '../../contexts/AuthContext';
 
 const { Text } = Typography;
 
@@ -15,16 +17,25 @@ interface LoginForm {
 export const LandingPage = () => {
   const [loading, setLoading] = useState(false);
   const [loginForm] = Form.useForm();
+  const { login, isAuthenticated } = useAuth();
+  const navigate = useNavigate();
+
+  // Redirect to dashboard if already authenticated
+  useEffect(() => {
+    if (isAuthenticated) {
+      navigate('/dashboard');
+    }
+  }, [isAuthenticated, navigate]);
 
   const handleLogin = async (values: LoginForm) => {
     setLoading(true);
     try {
-      // Simulate API call
-      await new Promise(resolve => setTimeout(resolve, 1000));
+      await new Promise(resolve => setTimeout(resolve, 5000));
+      await login(values.email, values.password);
       message.success('Login successful!');
-      console.log('Login:', values);
+      navigate('/dashboard');
     } catch (error) {
-      message.error('Login failed. Please try again.');
+      message.error('Login failed. Please check your credentials.');
     } finally {
       setLoading(false);
     }
