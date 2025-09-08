@@ -5,7 +5,7 @@ const { Title, Paragraph } = Typography;
 
 export const Dashboard = () => {
   return (
-    <div>
+    <div className="h-full w-full overflow-y-auto">
       <div className="mb-6">
         <Title level={2} className="!mb-2">Dashboard</Title>
         <Paragraph className="text-gray-600">
@@ -14,7 +14,7 @@ export const Dashboard = () => {
       </div>
 
       {/* Statistics Cards */}
-      <Row gutter={[16, 16]} className="mb-6">
+      <Row gutter={[12, 16]} className="mb-6">
         <Col xs={24} sm={12} lg={6}>
           <Card>
             <Statistic
