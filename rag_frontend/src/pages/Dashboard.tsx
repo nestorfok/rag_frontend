@@ -5,18 +5,18 @@ const { Title, Paragraph } = Typography;
 
 export const Dashboard = () => {
   return (
-    <div className="h-full w-full overflow-y-auto">
-      <div className="mb-6">
-        <Title level={2} className="!mb-2">Dashboard</Title>
-        <Paragraph className="text-gray-600">
+    <div className="h-full w-full flex flex-col overflow-hidden">
+      <div className="flex-shrink-0 mb-4">
+        <Title level={2} className="!mb-1">Dashboard</Title>
+        <Paragraph className="text-gray-600 !mb-0">
           Welcome to your Nestor AI dashboard. Here's an overview of your activity.
         </Paragraph>
       </div>
 
       {/* Statistics Cards */}
-      <Row gutter={[12, 16]} className="mb-6">
-        <Col xs={24} sm={12} lg={6}>
-          <Card>
+      <Row gutter={[8, 12]} className="flex-shrink-0 mb-4">
+        <Col xs={12} sm={12} lg={6}>
+          <Card size="small">
             <Statistic
               title="Total Conversations"
               value={42}
@@ -25,8 +25,8 @@ export const Dashboard = () => {
             />
           </Card>
         </Col>
-        <Col xs={24} sm={12} lg={6}>
-          <Card>
+        <Col xs={12} sm={12} lg={6}>
+          <Card size="small">
             <Statistic
               title="Active Sessions"
               value={3}
@@ -35,8 +35,8 @@ export const Dashboard = () => {
             />
           </Card>
         </Col>
-        <Col xs={24} sm={12} lg={6}>
-          <Card>
+        <Col xs={12} sm={12} lg={6}>
+          <Card size="small">
             <Statistic
               title="Hours Saved"
               value={24.5}
@@ -46,8 +46,8 @@ export const Dashboard = () => {
             />
           </Card>
         </Col>
-        <Col xs={24} sm={12} lg={6}>
-          <Card>
+        <Col xs={12} sm={12} lg={6}>
+          <Card size="small">
             <Statistic
               title="Efficiency Score"
               value={98.2}
