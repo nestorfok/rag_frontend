@@ -8,6 +8,7 @@ import { Dashboard } from './pages/Dashboard';
 import './App.css';
 import type { FC } from 'react';
 import { Settings } from './pages/Setting';
+import { ChatPage } from './pages/chatPage';
 
 // Ant Design theme configuration
 const theme = {
@@ -45,6 +46,17 @@ const App: FC = () => {
                 <ProtectedRoute>
                   <AuthenticatedLayout>
                     <Settings />
+                  </AuthenticatedLayout>
+                </ProtectedRoute>
+              }
+            />
+
+            <Route
+              path="/chat"
+              element={
+                <ProtectedRoute>
+                  <AuthenticatedLayout>
+                    <ChatPage />
                   </AuthenticatedLayout>
                 </ProtectedRoute>
               }

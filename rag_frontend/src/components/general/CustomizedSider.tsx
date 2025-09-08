@@ -54,12 +54,11 @@ export const CustomizedSider = ({
       },
     },
     {
-      key: 'settings',
-      // icon: <SettingOutlined />,
-      icon: <img src={'/settings.svg'} alt="Settings" className="w-[14px] h-[14px]" />,
-      label: 'Settings',
+      key: 'chat',
+      icon: <img src={'/brand-line.svg'} alt="Chat" className="w-[14px] h-[14px]" />,
+      label: 'Chat',
       onClick: () => {
-        navigate('/settings');
+        navigate('/chat');
         if (isMobile && onMobileSiderClose) {
           onMobileSiderClose();
         }
@@ -130,7 +129,19 @@ export const CustomizedSider = ({
           onMobileSiderClose();
         }
       },
-    }
+    },
+    {
+      key: 'settings',
+      // icon: <SettingOutlined />,
+      icon: <img src={'/settings.svg'} alt="Settings" className="w-[14px] h-[14px]" />,
+      label: 'Settings',
+      onClick: () => {
+        navigate('/settings');
+        if (isMobile && onMobileSiderClose) {
+          onMobileSiderClose();
+        }
+      },
+    },
   ];
 
   return (
