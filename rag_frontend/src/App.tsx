@@ -4,7 +4,7 @@ import { AuthProvider } from './contexts/AuthContext';
 import { ProtectedRoute } from './components/ProtectedRoute';
 import { AuthenticatedLayout } from './components/AuthenticatedLayout';
 import { LandingPage } from './pages/landingPage';
-import { Dashboard } from './pages/Dashboard';
+import { Dashboard } from './pages/dashboardPage';
 import './App.css';
 import type { FC } from 'react';
 import { Settings } from './pages/Setting';
