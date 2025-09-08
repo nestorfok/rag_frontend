@@ -44,7 +44,7 @@ export const AuthenticatedLayout = ({ children }: AuthenticatedLayoutProps) => {
 
   return (
     <>
-      <Layout className="min-h-screen overflow-hidden">
+      <Layout className="h-screen overflow-hidden">
         {/* Sidebar */}
         <CustomizedSider 
           isMobileSiderOpen={isMobileSiderOpen}
@@ -52,7 +52,7 @@ export const AuthenticatedLayout = ({ children }: AuthenticatedLayoutProps) => {
         />
 
         {/* Main Layout */}
-        <Layout className="flex-1 min-w-0">
+        <Layout className="flex-1 min-w-0 overflow-hidden">
           <CustomizedHeader 
             username={user?.name || ''} 
             handleLogout={handleLogout}
@@ -61,8 +61,8 @@ export const AuthenticatedLayout = ({ children }: AuthenticatedLayoutProps) => {
 
           {/* Content */}
           <Content className="!p-3 sm:!p-6 !bg-gray-50 overflow-auto flex-1">
-            <div className="bg-white rounded-lg shadow-sm min-h-full p-3 sm:p-6 max-w-full">
-              <div className="w-full">
+            <div className="bg-white rounded-lg shadow-sm h-full p-3 sm:p-6 max-w-full">
+              <div className="w-full h-full">
                 {children}
               </div>
             </div>

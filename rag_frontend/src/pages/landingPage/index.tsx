@@ -46,9 +46,9 @@ export const LandingPage = () => {
   };
 
   return (
-    <div className="w-full h-screen flex">
+    <div className="w-full min-h-screen flex">
       {/* Left Side - Purple Gradient Intro (Hidden on mobile) */}
-      <div className="hidden lg:flex lg:w-1/2 bg-gradient-to-br from-primary-600 via-primary-700 to-primary-800 p-12 flex-col justify-center animate-initial-hidden animate-fade-in-up animate-delay-100">
+      <div className="hidden lg:flex lg:w-1/2 bg-gradient-to-br from-primary-600 via-primary-700 to-primary-800 p-6 lg:p-12 flex-col justify-center overflow-y-auto animate-initial-hidden animate-fade-in-up animate-delay-100">
         <div className="">
           {/* Logo + Welcome Text*/}
           <div className="mb-8 flex items-center justify-center animate-initial-hidden animate-scale-in animate-delay-200">
@@ -70,7 +70,7 @@ export const LandingPage = () => {
           </div>
 
           {/* Feature Cards */}
-          <div className="space-y-6 flex flex-col items-center justify-center">
+          <div className="space-y-4 lg:space-y-6 flex flex-col items-center justify-center">
             <FeatureCard
               icon={<UserOutlined className="!text-white text-2xl" />}
               title="Smart Conversations"
@@ -108,7 +108,7 @@ export const LandingPage = () => {
       </div>
 
       {/* Right Side - Login Form */}
-      <div className="w-full lg:w-1/2 bg-white flex items-center justify-center p-8 animate-initial-hidden animate-fade-in-up animate-delay-100">
+      <div className="w-full lg:w-1/2 bg-white flex items-center justify-center p-8 overflow-y-auto animate-initial-hidden animate-fade-in-up animate-delay-100">
         <div className="w-full max-w-md">
           {/* Mobile Header */}
           <div className="lg:hidden text-center mb-8 animate-initial-hidden animate-fade-in-up animate-delay-200">

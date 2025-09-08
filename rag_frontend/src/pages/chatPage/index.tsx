@@ -52,7 +52,7 @@ export const ChatPage = () => {
   };
 
   return (
-    <div className="flex flex-col h-[82vh] gap-5">
+    <div className="flex flex-col h-full gap-5">
       {/* Chat Container - Takes remaining space and scrolls independently */}
       <div className="flex-1 overflow-hidden">
         {messages.length === 0 ? (
