@@ -1,4 +1,3 @@
-import { Button, Input, message } from "antd";
 import { useState } from "react";
 import { SuggestionCard } from "../../components/chatPage/SuggestionCard";
 import { InputForm } from "../../components/chatPage/InputForm";
@@ -54,12 +53,24 @@ export const ChatPage = () => {
   return (
     <div className="flex flex-col h-full gap-5">
       {/* Chat Container - Takes remaining space and scrolls independently */}
+      {/* 
+      flex-1 
+      - Makes the container expand to fill all available space in its parent flex container. 
+      - This ensures the chat area takes up the maximum available vertical space while allowing other elements (like headers or input areas) to maintain their size.
+      - This is the reason when inputBox is in the bottom.
+      
+      overflow-hidden
+      - Prevents any content from spilling outside the container's boundaries. This is particularly important in a chat interface where:
+        - Messages can be of varying lengths
+        - Content is dynamically loaded
+        - Animations are present (like the fade-in animations in your code)
+      */}
       <div className="flex-1 overflow-hidden">
         {messages.length === 0 ? (
           /* Empty state with suggestions */
           <div className="h-full flex flex-col">
             {/* Empty state message */}
-            <div className="flex-1 flex items-center justify-center">
+            <div className="flex-1 flex items-center justify-center animate-initial-hidden animate-fade-in-up animate-delay-200">
               <div className="text-center">
                 <div className="w-16 h-16 mx-auto mb-4 bg-gray-100 rounded-full flex items-center justify-center">
                   <svg className="w-8 h-8 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -71,7 +82,7 @@ export const ChatPage = () => {
             </div>
             
             {/* Input Suggestions Container */}
-            <div className="flex-shrink-0 pb-6">
+            <div className="flex-shrink-0 pb-6 animate-initial-hidden animate-fade-in-up animate-delay-300">
               <div className="max-w-4xl mx-auto px-4">
                 <div className="text-center mb-6">
                   <p className="text-sm text-gray-500">Get started with these suggestions</p>
@@ -115,7 +126,7 @@ export const ChatPage = () => {
       </div>
       
       {/* Input Container - Fixed at bottom */}
-      <div className="flex-shrink-0">
+      <div className="flex-shrink-0 animate-initial-hidden animate-fade-in-up animate-delay-400">
         <InputForm input={input} setInput={setInput} handleSendMessage={handleSendMessage} isLoading={isLoading} />
       </div>
     </div>
