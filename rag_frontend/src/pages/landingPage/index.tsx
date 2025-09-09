@@ -46,9 +46,9 @@ export const LandingPage = () => {
   };
 
   return (
-    <div className="w-full min-h-screen flex">
+    <div className="w-full h-screen flex">
       {/* Left Side - Purple Gradient Intro (Hidden on mobile) */}
-      <div className="hidden lg:flex lg:w-1/2 bg-gradient-to-br from-primary-600 via-primary-700 to-primary-800 p-6 lg:p-12 flex-col justify-center overflow-y-auto animate-initial-hidden animate-fade-in-up animate-delay-100">
+      <div className="hidden lg:flex lg:w-1/2 bg-gradient-to-br from-primary-600 via-primary-700 to-primary-800 p-6 lg:p-12 flex-col justify-center animate-initial-hidden animate-fade-in-up animate-delay-100">
         <div className="">
           {/* Logo + Welcome Text*/}
           <div className="mb-8 flex items-center justify-center animate-initial-hidden animate-scale-in animate-delay-200">
@@ -70,7 +70,7 @@ export const LandingPage = () => {
           </div>
 
           {/* Feature Cards */}
-          <div className="space-y-4 lg:space-y-6 flex flex-col items-center justify-center">
+          <div className="space-y-4 lg:space-y-6 flex flex-col items-center justify-center flex-shrink-0">
             <FeatureCard
               icon={<UserOutlined className="!text-white text-2xl" />}
               title="Smart Conversations"
@@ -93,7 +93,7 @@ export const LandingPage = () => {
               descriptionColor="primary-100"
             /> 
 
-            <FeatureCard
+            {/* <FeatureCard
               icon={<BulbOutlined className="!text-white text-2xl" />}
               title="24/7 Availability"
               description="Always ready to assist you with instant responses and support"
@@ -102,7 +102,7 @@ export const LandingPage = () => {
               animateDelay="500"
               titleColor="white"
               descriptionColor="primary-100"
-            />
+            /> */}
           </div>
         </div>
       </div>
@@ -120,7 +120,7 @@ export const LandingPage = () => {
           </div>
 
           {/* Login Form */}
-          <h2 className="text-4xl font-semibold text-neutral-800 text-center mb-3 animate-initial-hidden animate-fade-in-up animate-delay-300">
+          <h2 className="text-5xl font-semibold text-neutral-800 text-center mb-8 animate-initial-hidden animate-fade-in-up animate-delay-300">
             Log In
           </h2>
 

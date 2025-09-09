@@ -5,7 +5,7 @@ const { Title, Paragraph } = Typography;
 
 export const Dashboard = () => {
   return (
-    <div className="h-full w-full flex flex-col overflow-hidden">
+    <div className="h-full w-full flex flex-col overflow-x-hidden overflow-y-auto">
       <div className="flex-shrink-0 mb-4">
         <Title level={2} className="!mb-1">Dashboard</Title>
         <Paragraph className="text-gray-600 !mb-0">
@@ -61,7 +61,7 @@ export const Dashboard = () => {
 
       {/* Recent Activity */}
       <Row gutter={[16, 16]}>
-        <Col xs={24} lg={16}>
+        <Col xs={24} md={24} lg={16}>
           <Card title="Recent Conversations" className="h-full">
             <div className="space-y-4">
               <div className="flex items-center justify-between p-3 bg-gray-50 rounded-lg">

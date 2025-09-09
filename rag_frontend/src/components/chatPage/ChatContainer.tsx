@@ -49,7 +49,7 @@ export const ChatContainer = ({ messages, isLoading }: ChatContainerProps) => {
           ))}
           
           {/* Loading indicator */}
-          {!isLoading && (
+          {isLoading && (
             <AILoading />
           )}
           
